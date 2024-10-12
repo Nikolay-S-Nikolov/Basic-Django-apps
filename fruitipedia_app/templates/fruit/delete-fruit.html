@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block main_content %}
+
+    <main>
+
+        <!-- Delete Fruit Form -->
+        <section id="edit">
+
+            <div class="form">
+                <h2>Delete Fruit</h2>
+                <form action="{% url 'fruit-delete' pk=object.pk %}" class="edit-form" method="post">
+                    {{ form }}
+                    <button type="submit">Delete</button>
+                    {% csrf_token %}
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+{% endblock %}
